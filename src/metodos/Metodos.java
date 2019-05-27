@@ -11,6 +11,8 @@ public class Metodos {
     public int B = 0;
     public int R = 0;
 
+
+    
     public int[] obtenerNumeroGanador(int[] NumeroGanador, int[] auxiliar) {
 
         Random r = new Random();
@@ -26,17 +28,18 @@ public class Metodos {
             this.NumeroGanador[i] = auxiliar[res];
             auxiliar[res] = auxiliar[k - 1];
             k--;
-
         }
         return this.NumeroGanador;
+
     }
 
     public int[] obtenerNumeroQueAdivina(int[] NumeroQueAdivina) {
 
         Scanner sc = new Scanner(System.in);
+        
         for (int i = 0; i <= 3; i++) {
-
-            this.NumeroQueAdivina[i] = sc.nextInt();
+          
+            this.NumeroQueAdivina[i]=sc.nextInt();
 
         }
         return this.NumeroQueAdivina;
@@ -47,7 +50,7 @@ public class Metodos {
 
             if (NumeroGanador[i] == NumeroQueAdivina[i]) {
                 //     System.out.println("Nro correcto, lugar correcto ");
-                B++;
+             B++;
             } else if (NumeroGanador[0] == NumeroQueAdivina[i]
                     || NumeroGanador[1] == NumeroQueAdivina[i]
                     || NumeroGanador[2] == NumeroQueAdivina[i]
@@ -64,11 +67,11 @@ public class Metodos {
 
     }
 
-    public void juegoGanado(int B, int R) {
+    public boolean juegoGanado(int B, int R) {
+        boolean TodaviaNoHasGanado = true;
         if (B == 4 && R == 0) {
-            System.out.println("Ganaste!!!:)");
-
-        }
+            TodaviaNoHasGanado = false;
+        } return TodaviaNoHasGanado;
     }
 
 }

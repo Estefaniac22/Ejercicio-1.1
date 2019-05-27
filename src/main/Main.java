@@ -11,20 +11,23 @@ public class Main {
         
         Metodos pp = new Metodos ();
       
-        int contador = 0;
+int contador= 0;       
         System.out.println(Arrays.toString(pp.obtenerNumeroGanador(pp.NumeroGanador, pp.auxiliar)));
 
         do {
 
-            System.out.println("Ingrese un número: ");
+            System.out.print("Ingrese un número(valor por valor): ");
             pp.obtenerNumeroQueAdivina(pp.NumeroQueAdivina);
             
             pp.compararNumeros(pp.NumeroGanador, pp.NumeroQueAdivina, pp.B, pp.R);
 
-            pp.juegoGanado(pp.B,pp.R);
-            contador++;
+            System.out.println(pp.juegoGanado(pp.B, pp.R));
+            contador ++;
+        } while (contador<7);
+        System.out.println("------------" 
 
-        } while (contador < 7);
+                +"\nFin del juego!!");
     }
+    
 
 }
